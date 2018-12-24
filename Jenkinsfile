@@ -25,7 +25,10 @@ node{
            // app.push("${env.BUILD_NUMBER}")
            // app.push("latest")
 //}
-    sh("docker push ${imageTag}")
+    docker.withRegistry('https://registry.hub.docker.com', 'docker_credentials') {
+            app.push("${env.BUILD_NUMBER}")
+            app.push("latest")
+}
   }
   
   //Stage 3 : Deploy Application
