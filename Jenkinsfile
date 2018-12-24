@@ -22,8 +22,8 @@ node{
   //Stage 2 : Push the image to docker registry
   stage('Push image to registry') {
       docker.withRegistry('https://registry.hub.docker.com', 'docker_credentials') {
-            app.push("${imageTag}")
-           // app.push("latest")
+            app.push("${env.BUILD_NUMBER}")
+            app.push("latest")
 }
   }
   
