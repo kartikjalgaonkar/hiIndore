@@ -33,7 +33,7 @@ node{
               //Roll out to Dev Environment
               case "development":
                    // Create namespace if it doesn't exist
-                   sh("kubectl get ns ${namespace} || kubectl create ns ${namespace}")
+                   sh("kubectl get ns ${namespace} || kubectl create namespace ${namespace}")
            //Update the imagetag to the latest version
                    sh("sed -i.bak 's#hub.docker.com/${project}/${appName}:${imageVersion}#${imageTag}#' ./k8s/development/*.yaml")
                    //Create or update resources
