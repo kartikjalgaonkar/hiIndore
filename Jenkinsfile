@@ -14,6 +14,7 @@ node{
   
   //Stage 1 : Build the docker image.
   stage('Build image') {
+    sh 'mvn clean install'
       sh("docker build -t ${imageTag} .")
   }
   
