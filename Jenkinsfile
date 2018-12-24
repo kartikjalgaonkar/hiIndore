@@ -16,7 +16,7 @@ node{
   stage('Build image') {
     sh 'mvn clean install'
    //   sh("docker build -t ${imageTag} .")
-    app=docker.build("${imageTag}")
+    app=docker.build("kartikjalgaonkar/hi-indore")
   }
   
   //Stage 2 : Push the image to docker registry
