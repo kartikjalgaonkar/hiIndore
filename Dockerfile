@@ -17,8 +17,7 @@ ADD lib /code/lib
 ADD src /code/src
 
 #Build the code
-RUN ["mvn", "clean"]
-RUN ["mvn", "install"]
+sh 'mvn clean install'
 
 #Port the container listens on
 EXPOSE 8081
