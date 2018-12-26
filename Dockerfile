@@ -8,6 +8,7 @@ RUN ["java", "-version"]
 #RUN apt-get update
 #RUN apt-get install -y maven
 
+
 #Set the working directory for RUN and ADD commands
 WORKDIR /code
 
