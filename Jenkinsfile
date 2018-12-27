@@ -10,7 +10,7 @@ node{
   def imageTag = "hub.docker.com/kartikjalgaonkar/${project}/${appName}:${imageVersion}.${env.BUILD_NUMBER}"
   
   //Checkout Code from Git
-//  checkout scm
+  checkout scm
   
   //Stage 1 : Build the docker image.
  // stage('Build image') {
