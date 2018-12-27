@@ -1,19 +1,23 @@
+
+
+
 #Docker base image : Alpine Linux with OpenJDK JRE
 FROM openjdk:8-jre-alpine
-
+VOLUME /tmp
 #Check the java version
-RUN ["java", "-version"]
+#RUN ["java", "-version"]
 
 #Install maven
 #RUN apt-get update
 #RUN apt-get install -y maven
 
 #Set the working directory for RUN and ADD commands
-WORKDIR /code
+#WORKDIR /code
 
 #Copy the SRC, LIB and pom.xml to WORKDIR
-ADD pom.xml /code/pom.xml
+#ADD pom.xml /code/pom.xml
 ADD target/hi-indore.jar hi-indore.jar
+EXPOSE 8081
 #ADD lib /code/lib
 #ADD src /code/src
 
@@ -21,7 +25,8 @@ ADD target/hi-indore.jar hi-indore.jar
 #sh 'mvn clean install'
 
 #Port the container listens on
-EXPOSE 8081
+#EXPOSE 8081
 
 #CMD to be executed when docker is run.
-ENTRYPOINT ["java","-jar","target/hi-indore.jar"]
+#ENTRYPOINT ["java","-jar","target/hi-indore.jar"]
+ENTRYPOINT ["java","-jar","hi-indore.jar"]
