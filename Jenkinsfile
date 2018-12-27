@@ -32,11 +32,12 @@ node{
        switch (namespace) {
               //Roll out to Dev Environment
               case "development":
-        sh "kubectl config set-cluster minikube --server=https://127.0.0.1:8443 --insecure-skip-tls-verify=true"
-        sh "kubectl config set-context minikube --cluster=minikube --user=minikube"
-      sh "kubectl config use-context minikube"
+         sh "kubectl apply -f deployment.yaml"
+       // sh "kubectl config set-cluster minikube --server=https://127.0.0.1:8443 --insecure-skip-tls-verify=true"
+     //   sh "kubectl config set-context minikube --cluster=minikube --user=minikube"
+     // sh "kubectl config use-context minikube"
 
-         sh "minikube start --vm-driver=virtualbox"
+      //   sh "minikube start --vm-driver=virtualbox"
         // sh "kubectl run my-app --image=kartikjalgaonkar/hi-indore --port=8081"
                    // Create namespace if it doesn't exist
                   // sh "kubectl create secret docker-registry my-secret --docker-username=kartikjalgaonkar --docker-password=docker@11 --docker-email=kartik.jalgaonkar@yash.com"
