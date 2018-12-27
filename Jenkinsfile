@@ -54,7 +54,7 @@ node{
        //  sh "kubectl get svc --kubeconfig=/home/yash/.kube/config"
         // sh "minikube service hi-indore"
          sh "kubectl get svc hi-indore -n hi-indore \
-    -o jsonpath= \"{.status.loadBalancer.ingress[*].ip}\" --kubeconfig=/home/yash/.kube/config"
+    -o jsonpath= '{.status.loadBalancer.ingress[*].ip}' --kubeconfig=/home/yash/.kube/config"
                    break
            
 
