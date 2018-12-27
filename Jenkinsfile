@@ -8,7 +8,7 @@ node{
   def imageVersion = 'development'
   def namespace = 'development'
   def imageTag = "hub.docker.com/kartikjalgaonkar/${project}/${appName}:${imageVersion}.${env.BUILD_NUMBER}"
-  
+  def feSvcName = "hi-indore-Svc"
   //Checkout Code from Git
   checkout scm
   
@@ -50,7 +50,7 @@ node{
            sh("kubectl --namespace=${namespace} apply -f deployment.yml --kubeconfig=/home/yash/.kube/config")
                    sh("kubectl --namespace=${namespace} apply -f service.yml --kubeconfig=/home/yash/.kube/config")
            //Grab the external Ip address of the service
-                   sh("echo http://`kubectl --namespace=${namespace} get service/hi-indore --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > hi-indore")
+         sh("echo http://`kubectl --namespace=${namespace} get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
                    break
            
 
