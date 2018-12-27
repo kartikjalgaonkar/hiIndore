@@ -33,6 +33,7 @@ node{
               //Roll out to Dev Environment
               case "development":
          sh "kubectl apply -f deployment.yml --kubeconfig=/home/yash/.kube/config"
+         sh "kubectl apply -f service.yml --kubeconfig=/home/yash/.kube/config"
        // sh "kubectl config set-cluster minikube --server=https://127.0.0.1:8443 --insecure-skip-tls-verify=true"
      //   sh "kubectl config set-context minikube --cluster=minikube --user=minikube"
      // sh "kubectl config use-context minikube"
@@ -40,9 +41,7 @@ node{
       //   sh "minikube start --vm-driver=virtualbox"
         // sh "kubectl run my-app --image=kartikjalgaonkar/hi-indore --port=8081"
                    // Create namespace if it doesn't exist
-                  // sh "kubectl create secret docker-registry my-secret --docker-username=kartikjalgaonkar --docker-password=docker@11 --docker-email=kartik.jalgaonkar@yash.com"
-
-               //    sh "kubectl create secret docker-registry secret --docker-username=kartikjalgaonkar --docker-password=docker@11 --docker-email=kartik.jalgaonkar@yash.com"
+                  
                  // sh ("minikube start")
                  //  sh("kubectl get ns ${namespace} || kubectl create namespace ${namespace}")
            //Update the imagetag to the latest version
