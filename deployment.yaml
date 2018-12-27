@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: recruitment-service
-        image: hub.docker.com/recruitment-service:development
+        image: hub.docker.com/kartikjalgaonkar/hi-indore
         ports:
         - containerPort: 8081
