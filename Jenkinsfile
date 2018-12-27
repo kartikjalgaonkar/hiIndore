@@ -53,8 +53,9 @@ node{
        //  sh("echo http://`kubectl --namespace=${namespace} get service/${feSvcName} --output=json --kubeconfig=/home/yash/.kube/config | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName} ")
        //  sh "kubectl get svc --kubeconfig=/home/yash/.kube/config"
         // sh "minikube service hi-indore"
-         sh "kubectl get svc hi-indore -n hi-indore \
-    -o jsonpath= '{.status.loadBalancer.ingress[*].ip}' --kubeconfig=/home/yash/.kube/config"
+         sh("echo http://`kubectl --namespace=${namespace} get service/${feSvcName} --output=json --kubeconfig=/home/yash/.kube/config | jq -r '.status.loadBalancer.ingress[*].ip'` > ${feSvcName} ")
+         //sh "kubectl get svc hi-indore -n hi-indore \
+    //-o jsonpath= '{.status.loadBalancer.ingress[*].ip}' --kubeconfig=/home/yash/.kube/config"
                    break
            
 
