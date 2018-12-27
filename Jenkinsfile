@@ -39,7 +39,7 @@ node{
                   sh ("minikube start")
                    sh("kubectl get ns ${namespace} || kubectl create namespace ${namespace}")
            //Update the imagetag to the latest version
-                   sh("sed -i.bak 's#hub.docker.com/${project}/${appName}:${imageVersion}#${imageTag}#' ./k8s/development/*.yaml")
+        //           sh("sed -i.bak 's#hub.docker.com/${project}/${appName}:${imageVersion}#${imageTag}#' ./k8s/development/*.yaml")
                    //Create or update resources
            sh("kubectl --namespace=${namespace} apply -f k8s/development/deployment.yaml")
                    sh("kubectl --namespace=${namespace} apply -f k8s/development/service.yaml")
