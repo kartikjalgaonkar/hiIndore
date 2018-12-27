@@ -32,7 +32,7 @@ node{
        switch (namespace) {
               //Roll out to Dev Environment
               case "development":
-         sh "kubectl apply -f deployment.yml"
+        // sh "kubectl apply -f deployment.yml"
        // sh "kubectl config set-cluster minikube --server=https://127.0.0.1:8443 --insecure-skip-tls-verify=true"
      //   sh "kubectl config set-context minikube --cluster=minikube --user=minikube"
      // sh "kubectl config use-context minikube"
@@ -44,7 +44,7 @@ node{
 
                //    sh "kubectl create secret docker-registry secret --docker-username=kartikjalgaonkar --docker-password=docker@11 --docker-email=kartik.jalgaonkar@yash.com"
                  // sh ("minikube start")
-               //    sh("kubectl get ns ${namespace} || kubectl create namespace ${namespace}")
+                   sh("kubectl get ns ${namespace} || kubectl create namespace ${namespace}")
            //Update the imagetag to the latest version
         //           sh("sed -i.bak 's#hub.docker.com/${project}/${appName}:${imageVersion}#${imageTag}#' ./k8s/development/*.yaml")
                    //Create or update resources
