@@ -8,7 +8,7 @@ node{
   def imageVersion = 'development'
   def namespace = 'development'
   def imageTag = "hub.docker.com/kartikjalgaonkar/${project}/${appName}:${imageVersion}.${env.BUILD_NUMBER}"
-  def feSvcName = "hi-indore-Svc"
+  def feSvcName = "hi-indore"
   //Checkout Code from Git
   checkout scm
   
