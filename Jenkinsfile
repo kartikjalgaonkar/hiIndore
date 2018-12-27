@@ -32,19 +32,20 @@ node{
        switch (namespace) {
               //Roll out to Dev Environment
               case "development":
+         sh "kubectl run my-app --image=kartikjalgaonkar/hi-indore --port=8081"
                    // Create namespace if it doesn't exist
                   // sh "kubectl create secret docker-registry my-secret --docker-username=kartikjalgaonkar --docker-password=docker@11 --docker-email=kartik.jalgaonkar@yash.com"
 
                //    sh "kubectl create secret docker-registry secret --docker-username=kartikjalgaonkar --docker-password=docker@11 --docker-email=kartik.jalgaonkar@yash.com"
                  // sh ("minikube start")
-                   sh("kubectl get ns ${namespace} || kubectl create namespace ${namespace}")
+               //    sh("kubectl get ns ${namespace} || kubectl create namespace ${namespace}")
            //Update the imagetag to the latest version
         //           sh("sed -i.bak 's#hub.docker.com/${project}/${appName}:${imageVersion}#${imageTag}#' ./k8s/development/*.yaml")
                    //Create or update resources
-           sh("kubectl --namespace=${namespace} apply -f k8s/development/deployment.yaml")
-                   sh("kubectl --namespace=${namespace} apply -f k8s/development/service.yaml")
+        //   sh("kubectl --namespace=${namespace} apply -f k8s/development/deployment.yaml")
+         //          sh("kubectl --namespace=${namespace} apply -f k8s/development/service.yaml")
            //Grab the external Ip address of the service
-                   sh("echo http://`kubectl --namespace=${namespace} get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
+            //       sh("echo http://`kubectl --namespace=${namespace} get service/${feSvcName} --output=json | jq -r '.status.loadBalancer.ingress[0].ip'` > ${feSvcName}")
                    break
            
         //Roll out to Dev Environment
