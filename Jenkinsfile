@@ -32,7 +32,7 @@ node{
        switch (namespace) {
               //Roll out to Dev Environment
               case "development":
-         sh "minikube start"
+         sh "minikube start --vm-driver=virtualbox"
         // sh "kubectl run my-app --image=kartikjalgaonkar/hi-indore --port=8081"
                    // Create namespace if it doesn't exist
                   // sh "kubectl create secret docker-registry my-secret --docker-username=kartikjalgaonkar --docker-password=docker@11 --docker-email=kartik.jalgaonkar@yash.com"
