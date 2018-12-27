@@ -33,6 +33,10 @@ node{
               //Roll out to Dev Environment
               case "development":
                    // Create namespace if it doesn't exist
+                   sh "kubectl create secret docker-registry my-secret --docker-username=kartikjalgaonkar --docker-password=docker@11 --docker-email=kartik.jalgaonkar@yash.com"
+
+                   sh "kubectl create secret docker-registry secret --docker-username=kartikjalgaonkar --docker-password=docker@11 --docker-email=kartik.jalgaonkar@yash.com"
+
                    sh("kubectl get ns ${namespace} || kubectl create namespace ${namespace}")
            //Update the imagetag to the latest version
                    sh("sed -i.bak 's#hub.docker.com/${project}/${appName}:${imageVersion}#${imageTag}#' ./k8s/development/*.yaml")
