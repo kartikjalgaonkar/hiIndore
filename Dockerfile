@@ -13,6 +13,7 @@ WORKDIR /code
 
 #Copy the SRC, LIB and pom.xml to WORKDIR
 ADD pom.xml /code/pom.xml
+ADD target/hi-indore.jar hi-indore.jar
 #ADD lib /code/lib
 #ADD src /code/src
 
