@@ -1,21 +1,24 @@
-apiVersion: apps/v1
-kind: Deployment
+kind: Pod
+apiVersion: v1
 metadata:
-  name: hi-indore-deployment
+  name: hello-app
   labels:
-    app: hi-indore
+    app: hello
 spec:
-  replicas: 2
+  containers:
+    - name: hello-app
+      image: hashicorp/http-echo
+      args:
+        - "-text=apple"
+
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: hello-service
+spec:
   selector:
-    matchLabels:
-      app: hi-indore
-  template:
-    metadata:
-      labels:
-        app: hi-indore
-    spec:
-      containers:
-      - name: hi-indore
-        image: kartikjalgaonkar/hi-indore
-        ports:
-        - containerPort: 8081
+    app: hello
+  ports:
+    - port: 8081 # Default port for image
