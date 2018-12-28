@@ -6,7 +6,6 @@ metadata:
 spec:
   ports:
     - name: http
-      port: 8081
   type: ClusterIP    
   selector:
     apps: hi-indore
