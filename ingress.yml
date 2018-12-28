@@ -10,7 +10,8 @@ metadata:
 
 spec:
   rules:
-  - http:
+   - host: localhost
+     http:
       paths:
         - path: /hello
           backend:
