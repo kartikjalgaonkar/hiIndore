@@ -21,4 +21,4 @@ spec:
   selector:
     app: hello
   ports:
-    - port: 8081 # Default port for image
+    - port: 5678 # Default port for image
