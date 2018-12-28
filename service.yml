@@ -1,12 +1,9 @@
-apiVersion: v1
 kind: Service
+apiVersion: v1
 metadata:
   name: hi-indore
-  namespace: development
 spec:
-  ports:
-    - name: http
-    - port:8081
-  type: LoadBa    lancer
   selector:
-    apps: hi-indore
+    app: hi-indore
+  ports:
+    - port: 8081
