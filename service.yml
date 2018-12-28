@@ -6,6 +6,6 @@ metadata:
 spec:
   ports:
     - name: http
-  type: ClusterIP    
+  type: LoadBa    lancer
   selector:
     apps: hi-indore
