@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hi-indore-deployment
+  name: hi-indore
   labels:
     app: hi-indore
 spec:
