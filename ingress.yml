@@ -12,4 +12,3 @@ spec:
           backend:
             serviceName: hi-indore
             servicePort: 8081
-servicePort: 8081
