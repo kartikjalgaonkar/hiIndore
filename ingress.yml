@@ -10,10 +10,9 @@ metadata:
 
 spec:
   rules:
-   - host: localhost
-     http:
+   http:
       paths:
-        - path: /hello
+        - path: /
           backend:
             serviceName: hi-indore
             servicePort: 8081
