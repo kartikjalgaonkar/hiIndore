@@ -6,6 +6,7 @@ metadata:
 spec:
   ports:
     - name: http
+    - port:8081
   type: LoadBa    lancer
   selector:
     apps: hi-indore
