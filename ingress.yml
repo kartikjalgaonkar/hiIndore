@@ -11,4 +11,4 @@ spec:
         - path: /hello
           backend:
             serviceName: hi-indore
-            servicePort: 5678
+            servicePort: 8081
