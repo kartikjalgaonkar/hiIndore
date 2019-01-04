@@ -19,3 +19,6 @@ spec:
         image: kartikjalgaonkar/hi-indore
         ports:
         - containerPort: 8081
+        resources:
+          requests:
+            cpu: 400m
