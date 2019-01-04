@@ -8,7 +8,7 @@ spec:
   rules:
   - http:
       paths:
-        - path: /hello
+        - path: /hi
           backend:
             serviceName: hi-indore
             servicePort: 8081
