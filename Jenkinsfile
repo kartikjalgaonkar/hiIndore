@@ -10,16 +10,16 @@ node{
   
   //Stage 1 : Build the docker image.
   stage('Build image') {
-  //  sh 'mvn clean install'
-   //  app = docker.build("kartikjalgaonkar/hi-indore")
+    sh 'mvn clean install'
+     app = docker.build("kartikjalgaonkar/hi-indore")
   }
   
   //Stage 2 : Push the image to docker registry
   stage('Push image to registry') {
-   //   docker.withRegistry('https://registry.hub.docker.com', 'docker_credentials') {
-     //       app.push("${env.BUILD_NUMBER}")
-      //      app.push("latest")
-//}
+      docker.withRegistry('https://registry.hub.docker.com', 'docker_credentials') {
+            app.push("${env.BUILD_NUMBER}")
+           // app.push("latest")
+}
   }
   
   //Stage 3 : Deploy Application
